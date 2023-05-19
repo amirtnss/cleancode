@@ -34,19 +34,6 @@ module.exports=(tokens) =>{
             inFunction = true;
             expression = ""
         }
-        else if (tokens[i].type == constTokens.typeIf) {
-            expression = factory.create(constParser.conditionIf, tokens, i);
-            if (inFunction == true){
-                typeFunction.push(expression);
-            }
-            else {
-                AST.push(expression);
-            }
-            i = expression.nombre_iteration;
-            inIf = true;
-            expression = ""
-
-        }
         else if (tokens[i].type == constTokens.typeComment) {
             expression = factory.create(constParser.expressionComment, tokens, i);
             i = expression.end;
@@ -95,31 +82,10 @@ module.exports=(tokens) =>{
             i= expression.end;
         }
         if(expression){
-            if (inIf == true) {
-                typeIf.push(expression)
-            }
-            else if (inFunction == true) {
-                typeFunction.push(expression)
-            }
-            else{
                 AST.push(expression);
-            }
-        }else{
-            if (inIf == true) {
-                if (tokens[i].value)
-                    typeIf.push(tokens[i].value)
-                else
-                    typeIf.push(tokens[i].type)
-            }
-            else if (inFunction == true) {
-                if (tokens[i].value)
-                    typeFunction.push(tokens[i].value)
-                else
-                    typeFunction.push(tokens[i].type)
-            }
-            else{
+        }
+        else{
                 AST.push(tokens[i]);
-            }
         }
     }
     return AST;

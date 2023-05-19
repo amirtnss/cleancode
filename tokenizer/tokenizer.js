@@ -48,7 +48,7 @@ module.exports = function(code) {
             else if (t == '*') {
               tokens.push({ type: constTokens.typeMultiplication, value: t })
             }
-            else if (t == '\\') {
+            else if (t == '/') {
               tokens.push({ type: constTokens.typeDivision, value: t })
             }
             else if (t == '==') {

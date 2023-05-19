@@ -18,15 +18,16 @@ exports.specialChars = {
     openSquareBracket:  {regRule: /\[/g, value:'['},
     closeSquareBracket:  {regRule: /\]/g, value:']'},
     colon:  {regRule: /\:/g, value:':'},
-    aposthrophe:  {regRule: /\'/g, value:"'"},
+    quote:  {regRule: /\'/g, value:"'"},
     incrementations: {regRule: /\+\+/g, value: "++"},
     decrementations: { regRule: /\-\-/g, value: "--" },
     addition: {regRule: /(\+)/g, value:'+'},
     soustraction: { regRule: /(\-)/g, value: '-' },
+    multiplication: { regRule: /(?<=\d)\*(?=\d)/g, value: '*' },
+    division: { regRule: /(?<=\d)\/(?=\d)/g, value: '/' },
     comment:  {regRule: /\/\//g, value:"comment"},
     blockCommentOpen: { regRule: /\/\*/g, value: "/*" },
     blockCommentClose: { regRule: /\*\//g, value: "*/" },
-    division: { regRule: /(\/)/g, value: '/' },
     and: { regRule: /(\&\&)/g, value: '&&' },
     or: { regRule: /(\|\|)/g, value: '||' },
     function:  {regRule: /function/g, value:"function"},
@@ -36,7 +37,6 @@ exports.specialChars = {
     return:  {regRule: /return/g, value:"return"},
     true:  {regRule: /true/g, value:"true"},
     false:  {regRule: /false/g, value:"false"}
-
 };
 
 exports.symbolePoint               = "point";
@@ -53,7 +53,7 @@ exports.symboleLet                 = "let";
 exports.symboleOpenBrace           = "openBrace";
 exports.symboleCloseBrace          = "closeBrace";
 exports.symboleColon               = "colon";
-exports.symboleApostrohe           = "aposthrophe";
+exports.symboleQuote               = "quote";
 exports.symboleIncrementation      = "incrementation";
 exports.symboleDecrementation      = "decrementation";
 exports.symboleFunction            = "function";
@@ -62,8 +62,6 @@ exports.symboleIf                  = "if";
 exports.symboleElse                = "else";
 exports.symboleReturn              = "return";
 exports.symboleBool                = "boolean";
-
-
 
 exports.typeNumber              = "number";
 exports.typeArrow               = "arrow";
@@ -80,7 +78,6 @@ exports.typeCloseBrace          = "closeBrace";
 exports.typeOpenSquareBracket   = "openSquareBracket";
 exports.typeCloseSquareBracket  = "closeSquareBracket";
 exports.typeColon               = "colon";
-exports.typeColon               = "apostrhophe";
 exports.typeIncrementation      = "incrementation";
 exports.typeDecrementation      = "decrementation";
 exports.typeAddition            = "addition";
@@ -94,7 +91,7 @@ exports.typeBooleanEqual        = "booleanEqual";
 exports.typeDifferent           = "different";
 
 exports.typeEqual               = "equal";
-exports.typeApostrohe           = "apostrhophe";
+exports.typeQuote               = "Quote";
 exports.typeFonction            = "function";
 exports.typeComment             = "comment";
 exports.typeIf                  = "if";
